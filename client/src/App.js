@@ -10,10 +10,12 @@ import './App.css'
 import People from './components/lists/People'
 import AddBoat from './components/forms/AddBoat'
 
+import Boats from './components/lists/Boats'
+
 const { Content } = Layout
 
 const client = new ApolloClient({
-  uri: 'http://localhost:4000/graphql',
+  uri: 'http://localhost:4002/graphql',
   cache: new InMemoryCache()
 })
 
@@ -25,6 +27,7 @@ const App = () => (
         <AddPerson />
         <People />
         <AddBoat />
+        <Boats />
       </Content>
     </div>
   </ApolloProvider>

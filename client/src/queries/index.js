@@ -65,3 +65,11 @@ export const GET_BOAT = gql`
     }
   }
 `
+
+export const REMOVE_BOAT = gql`
+  mutation RemoveBoat($id: String!) {
+    RemoveBoat(id: $id) {
+      id
+    }
+  }
+`

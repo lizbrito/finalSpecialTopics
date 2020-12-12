@@ -51,7 +51,7 @@ const AddBoat = () => {
           query: GET_BOAT,
           data: {
             ...data,
-            // boats: [...data.boats, addBoat]
+            boats: [...data.boats, addBoat]
           }
         })
       }
@@ -75,36 +75,40 @@ const AddBoat = () => {
         name='year'
         rules={[{ required: true, message: 'Please input year of the boat!' }]}
       >
-        <Input placeholder='2012' />
+        <Input placeholder='Year' />
       </Form.Item>
+
       <Form.Item
         name='make'
-        rules={[{ required: true, message: 'Please input make of the boat!' }]}
+        rules={[{ required: true, message: 'Please input make of the boat!'}]}
       >
-        <Input placeholder='Navigator' />
+        <Input placeholder='Make' />
       </Form.Item>
       <Form.Item
         name='model'
         rules={[{ required: true, message: 'Please input model! of the boat' }]}
       >
-        <Input placeholder='K900' />
+        <Input placeholder='Model' />
       </Form.Item>
+
       <Form.Item
         name='price'
         rules={[{ required: true, message: 'Please input price of the boat!' }]}
       >
-        <Input placeholder='$352,254.00' />
+        <Input placeholder='Price' />
       </Form.Item>
+
       <Form.Item
         name='personId'
         rules={[{ required: true, message: 'Please select owner of the boat!' }]}
       >
-        <Select style={{ width: 120 }} placeholder="John Doe">
+        <Select style={{ width: 120 }} placeholder="Owner">
           {data.people.map(({ id, firstName }) => (
             <Option key={id} value={id} >{firstName}</Option>
           ))}
         </Select>
       </Form.Item>
+
       <Form.Item shouldUpdate={true}>
         {() => (
           <Button
@@ -115,7 +119,9 @@ const AddBoat = () => {
               form.getFieldsError().filter(({ errors }) => errors.length).length
             }
           >
+
             Add Boat
+
           </Button>
         )}
       </Form.Item>
